@@ -1,5 +1,5 @@
 backend:
-  name: test-repo
+  name: satackey/blog.satackey.com
 
 media_folder: static/assets
 public_folder: assets
