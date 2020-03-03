@@ -2,7 +2,7 @@
 path: 2020-03-03-github-actions-docker-buildx-cache
 date: 2020-03-03T05:50:34.138Z
 title: GitHub ActionsでDocker buildxのマルチステージビルドのキャッシュを保存する方法
-description: CIでDockerイメージのビルドをするとき、毎回のビルドに1時間近くかかっていると怠くなってきます(Cross platformなイメージを作ると特に)。というわけでメモ。
+description: CIでDockerイメージのビルドをするとき、毎回のビルドに1時間近くかかっていると怠くなってきます(Cross platformなイメージを作ると特に)。
 ---
 CIでDockerイメージのビルドをするとき、毎回のビルドに1時間近くかかっていると怠くなってきます(Cross platformなイメージを作ると特に)。というわけでメモ。
 
