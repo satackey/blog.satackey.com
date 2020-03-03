@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `さなけのなさけ`,
+    titleTemplate: "%s | さなけのなさけ",
     author: `さなけ`,
     description: `技術メモとイベント参加録`,
-    siteUrl: `https://blog.satackey.com/`,
+    siteUrl: `https://blog.satackey.com`,
     social: {
       twitter: `satakenkoki`,
     },
