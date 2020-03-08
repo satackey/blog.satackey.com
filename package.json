@@ -29,7 +29,7 @@
     "gatsby-remark-responsive-iframe": "^2.1.1",
     "gatsby-remark-smartypants": "^2.0.9",
     "gatsby-remark-social-cards": "https://github.com/Y0KUDA/gatsby-remark-social-cards-jp.git",
-    "gatsby-remark-vscode": "^1.0.4",
+    "gatsby-remark-vscode": "^2.0.3",
     "gatsby-source-filesystem": "^2.1.50",
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.1.18",
