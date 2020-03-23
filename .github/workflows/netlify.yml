@@ -2,7 +2,7 @@ name: Build & Deploy to Netlify
 
 # https://qiita.com/nwtgck/items/e9a355c2ccb03d8e8eb0
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -28,6 +28,7 @@ jobs:
 
     - name: Deploy
       uses: nwtgck/actions-netlify@v1.0
+      if: github.event_name == 'pull_request' || contains(github.head_ref, 'master')
       with:
         publish-dir: public
         production-branch: master
