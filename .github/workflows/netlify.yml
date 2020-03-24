@@ -26,13 +26,22 @@ jobs:
     - name: Build
       run: yarn build
 
+    - name: Output github.token only for PR
+      id: githubtoken
+      run: |
+        GITHUB_TOKEN=""
+        if [ "${{ github.event_name }}" = "pull_request" ];then
+          GITHUB_TOKEN="${{ github.token }}"
+        fi
+        echo "##[set-output name=tonotify]$GITHUB_TOKEN"
+
     - name: Deploy
       uses: nwtgck/actions-netlify@v1.0
       if: github.event_name == 'pull_request' || contains(github.ref, 'master')
       with:
         publish-dir: public
         production-branch: master
-        # github-token: ${{ github.token }}
+        github-token: ${{ steps.githubtoken.outputs.tonotify }}
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
