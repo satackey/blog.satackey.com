@@ -34,7 +34,7 @@ jobs:
       uses: satackey/action-js-inline@release-master
       id: names
       with:
-        required-packages: actions-exec-wrapper
+        required-packages: actions-exec-wrapper @actions/core
         event: ${{ github.event_name }}
         script: |
           const core = require('@actions/core')
