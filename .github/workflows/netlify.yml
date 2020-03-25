@@ -57,15 +57,15 @@ jobs:
           ${{ runner.OS }}-yarn-${{ hashFiles('package.json') }}-
           ${{ runner.OS }}-yarn-
 
-    - name: Restore Gatsby build cache
-      uses: actions/cache@v1
-      with:
-        path: .cache
-        key: ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
-        restore-keys: |
-          ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-${{ hashFiles('package.json') }}-
-          ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-
-          ${{ runner.OS }}-gatsby-
+    # - name: Restore Gatsby build cache
+    #   uses: actions/cache@v1
+    #   with:
+    #     path: .cache
+    #     key: ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
+    #     restore-keys: |
+    #       ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-${{ hashFiles('package.json') }}-
+    #       ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-
+    #       ${{ runner.OS }}-gatsby-
 
     - name: Install dependencies
       run: yarn install --frozen-lockfile
