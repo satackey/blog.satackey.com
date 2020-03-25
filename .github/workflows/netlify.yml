@@ -21,15 +21,32 @@ jobs:
       with:
         node-version: 12.x
 
-    - name: Output names
+    # - name: Output names
+    #   run: |
+    #     GITHUB_TOKEN=""
+    #     if [ "${{ github.event_name }}" = "pull_request" ];then
+    #       GITHUB_TOKEN="${{ github.token }}"
+    #     fi
+    #     echo "##[set-output name=notif-token]$GITHUB_TOKEN"
+    #     echo "##[set-output name=yarn-cache]$(yarn cache dir)"
+
+    - name: Output current branch name
+      uses: satackey/action-js-inline@release-master
       id: names
-      run: |
-        GITHUB_TOKEN=""
-        if [ "${{ github.event_name }}" = "pull_request" ];then
-          GITHUB_TOKEN="${{ github.token }}"
-        fi
-        echo "##[set-output name=notif-token]$GITHUB_TOKEN"
-        echo "##[set-output name=yarn-cache]$(yarn cache dir)"
+      with:
+        required-packages: actions-exec-wrapper
+        event: ${{ github.event_name }}
+        script: |
+          const core = require('@actions/core')
+          const exec = require('actions-exec-wrapper')
+
+          const eventName = core.getInput('event')
+          const token = eventName === 'pull_request' ? process.env.GITHUB_TOKEN : ''
+          core.setOutput('notif-token', token)
+
+          return exec.exec('yarn cache dir').then(({ stdoutStr }) => {
+            core.setOutput('yarn-cache', stdoutStr)
+          }) 
 
     - name: Restore yarn cache
       uses: actions/cache@v1
