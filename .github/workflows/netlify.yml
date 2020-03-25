@@ -31,14 +31,24 @@ jobs:
         echo "##[set-output name=notif-token]$GITHUB_TOKEN"
         echo "##[set-output name=yarn-cache]$(yarn cache dir)"
 
-    - name: Cache Node.js modules
+    - name: Restore yarn cache
       uses: actions/cache@v1
       with:
         path: ${{ steps.names.outputs.yarn-cache }}
         key: ${{ runner.OS }}-yarn-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
         restore-keys: |
-          ${{ runner.OS }}-yarn-${{ hashFiles('package.json') }}
+          ${{ runner.OS }}-yarn-${{ hashFiles('package.json') }}-
           ${{ runner.OS }}-yarn-
+
+    - name: Restore Gatsby build cache
+      uses: actions/cache@v1
+      with:
+        path: .cache
+        key: ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-${{ hashFiles('package.json') }}-
+          ${{ runner.OS }}-gatsby-${{ hashFiles('**.md') }}-
+          ${{ runner.OS }}-gatsby-
 
     - name: Install dependencies
       run: yarn install --frozen-lockfile
