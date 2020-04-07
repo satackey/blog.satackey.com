@@ -1,0 +1,15 @@
+https://satackey.com/* https://blog.satackey.com/:splat 302!
+https://www.satackey.com/* https://blog.satackey.com/:splat 302!
+https://satackeyblog.netlify.com/* https://blog.satackey.com/:splat 301!
+
+http://satackey.com/* https://blog.satackey.com/:splat 302!
+http://www.satackey.com/* https://blog.satackey.com/:splat 302!
+http://satackeyblog.netlify.com/* https://blog.satackey.com/:splat 301!
+
+https://satackey.com/ https://blog.satackey.com/ 302!
+https://www.satackey.com/ https://blog.satackey.com/ 302!
+https://satackeyblog.netlify.com/ https://blog.satackey.com/ 301!
+
+http://satackey.com/ https://blog.satackey.com/ 302!
+http://www.satackey.com/ https://blog.satackey.com/ 302!
+http://satackeyblog.netlify.com/ https://blog.satackey.com/ 301!
