@@ -36,7 +36,7 @@
     "netlify-cms-app": "^2.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^6.0.0",
     "react-switch": "^5.0.0",
     "react-typography": "^0.16.19",
     "styled-components": "^4.4.1",
