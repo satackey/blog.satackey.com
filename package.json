@@ -27,7 +27,7 @@
     "gatsby-remark-copy-linked-files": "^2.3.0",
     "gatsby-remark-images": "^3.2.6",
     "gatsby-remark-responsive-iframe": "^2.4.0",
-    "gatsby-remark-smartypants": "^2.2.4",
+    "gatsby-remark-smartypants": "^2.3.0",
     "gatsby-remark-social-cards": "https://github.com/Y0KUDA/gatsby-remark-social-cards-jp.git",
     "gatsby-remark-vscode": "^2.0.3",
     "gatsby-source-filesystem": "^2.3.0",
