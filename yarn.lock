@@ -6626,10 +6626,10 @@ gatsby-plugin-google-analytics@^2.3.0:
     "@babel/runtime" "^7.9.2"
     minimatch "3.0.4"
 
-gatsby-plugin-manifest@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.0.tgz#8b4b1ca8169d764e9141325a9d03c9666dc13f54"
-  integrity sha512-z61gZHnMZxYRhA1cU8vp7+COgZv2xnlz6uepDeCvb3TtB70JKcYfegsJqmkv90WOvumF9YYt+/p9yckGJWIQwQ==
+gatsby-plugin-manifest@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.1.tgz#57381d3cc2d3b8aaa0d40bfcb7595323490f8708"
+  integrity sha512-OdpqwRdhJJn/BtwWBqRbNllIbNAFAHF1ntkZQqi7LvvaUeSdeKewi7IhYRab6O/fAZ5oQsLq1DWVjpyLEt0czg==
   dependencies:
     "@babel/runtime" "^7.9.2"
     gatsby-core-utils "^1.2.0"
@@ -12439,7 +12439,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.27:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-potrace@^2.1.5, potrace@^2.1.6:
+potrace@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/potrace/-/potrace-2.1.6.tgz#687d48d4441eebca9539f4c39f6815b6e2480e67"
   integrity sha512-sXdIDGZAb3x1GSnyps7VxksRoy57/ch+kq7J79L5UPUHU5KRIJF9oLJQeRVyYlOPjois+gMxVfNJkQjSkK9xMA==
