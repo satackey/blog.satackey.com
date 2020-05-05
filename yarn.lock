@@ -6911,10 +6911,10 @@ gatsby-remark-smartypants@^2.3.0:
     jimp "^0.6.0"
     path "^0.12.7"
 
-gatsby-remark-vscode@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-vscode/-/gatsby-remark-vscode-2.1.0.tgz#8e183a528753e1e65ba9db24e9795f4740091146"
-  integrity sha512-5AadqlN1G/FaiBTBMXgYUkJRb10DJJbrp2zaLy9evvseXUMzoLCa5j3YbRjat2NkhcYp6QGZ4NRRrZVYnKNj+g==
+gatsby-remark-vscode@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-vscode/-/gatsby-remark-vscode-2.1.1.tgz#59234ccf17e3a11595c289a041195cd89592072d"
+  integrity sha512-tonJFIJufFE/bT4gT8mOVkIpnVYBe3wGzqC6NbIzxGiIV1l7EgJx7dOvLu9bzf4Dp8ZXJFx1oM5K7Ji65PNj1Q==
   dependencies:
     decompress "^4.2.0"
     json5 "^2.1.1"
