@@ -31,7 +31,7 @@
     "gatsby-remark-social-cards": "https://github.com/Y0KUDA/gatsby-remark-social-cards-jp.git",
     "gatsby-remark-vscode": "^2.1.1",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-transformer-remark": "^2.8.12",
+    "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.5.3",
     "netlify-cms-app": "^2.12.13",
     "react": "^16.13.1",
