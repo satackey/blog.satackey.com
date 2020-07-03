@@ -30,7 +30,7 @@
     "gatsby-remark-smartypants": "^2.3.9",
     "gatsby-remark-social-cards": "https://github.com/Y0KUDA/gatsby-remark-social-cards-jp.git",
     "gatsby-remark-vscode": "^2.1.2",
-    "gatsby-source-filesystem": "^2.3.17",
+    "gatsby-source-filesystem": "^2.3.18",
     "gatsby-transformer-remark": "^2.8.23",
     "gatsby-transformer-sharp": "^2.5.10",
     "netlify-cms-app": "^2.12.16",
