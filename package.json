@@ -20,7 +20,7 @@
     "gatsby-plugin-netlify-cms": "^4.3.11",
     "gatsby-plugin-offline": "^3.2.20",
     "gatsby-plugin-react-helmet": "^3.3.10",
-    "gatsby-plugin-sharp": "^2.6.20",
+    "gatsby-plugin-sharp": "^2.6.21",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-plugin-typography": "^2.5.10",
