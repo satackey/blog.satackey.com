@@ -25,7 +25,7 @@ jobs:
       uses: satackey/action-js-inline@v0.0.1
       id: names
       with:
-        required-packages: actions-exec-listener @actions/core
+        required-packages: actions-exec-listener @actions/exec @actions/core
         event: ${{ github.event_name }}
         script: |
           const core = require('@actions/core')
