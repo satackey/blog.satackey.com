@@ -39,7 +39,7 @@ jobs:
           core.setOutput('yarn-cache', cacheDir)
 
     - name: Restore yarn cache
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       with:
         path: ${{ steps.names.outputs.yarn-cache }}
         key: ${{ runner.OS }}-yarn-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}
