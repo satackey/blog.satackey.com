@@ -67,7 +67,7 @@ jobs:
       run: yarn build
 
     - name: Deploy
-      uses: nwtgck/actions-netlify@v1.0
+      uses: nwtgck/actions-netlify@v1.1
       if: github.event_name == 'pull_request' || contains(github.ref, 'master')
       with:
         publish-dir: public
