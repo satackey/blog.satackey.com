@@ -26,7 +26,11 @@ title: 手書きレポートを自動化する方法
 
 ## ペンプロッタの購入
 
-[Aliexpress で「drawbot pen」と検索](https://www.aliexpress.com/wholesale?SearchText=drawbot+pen)して出てくるやつを買えばいいと思います(適当)。英語ですけどどうにかなります(手書きレポートを書くよりは100倍マシ)。ここでは「Arduino 互換品」と「CNC シールド」を使っている前提で進めます。というわけで「Arduino」とか「CNC」とかが説明にあれば9割方間違い無いです。英語ですがどうにかなります。注文後、中国から安い船便で1〜3ヶ月ぐらい後に届くので、気長に待ちましょう。
+[Aliexpress で「drawbot pen」と検索](https://www.aliexpress.com/wholesale?SearchText=drawbot+pen)して出てくるやつを買えばいいと思います(適当)。英語ですけどどうにかなります(手書きレポートを書くよりは100倍マシ)。
+
+ここでは「Arduino 互換品」と「CNC シールド」を使っている前提で進めます。というわけで「Arduino」とか「CNC」とかが説明にあれば9割方間違い無いです。英語ですがどうにかなります。
+
+注文後、中国から安い船便で1〜3ヶ月ぐらい後に届くので、気長に待ちましょう。
 
 「口」の字型と「十」の字型がありますが、「十」の字型の方が保管のスペースが少なくて済むのでおすすめです。
 
@@ -36,11 +40,16 @@ title: 手書きレポートを自動化する方法
 
 ### 組み立て
 
-部品がつまった箱が届きます(ほどんどが商品名に `DIY` と書いてあるので組み立て済みで届くことは稀)。僕の場合は説明書が箱の中に入っているわけではなく、販売者から組み立ての説明書のダウンロードリンクが送られてきました。英語か中国語かの説明書だったはずですが、前述の記事と説明書の図でどうにか組み立てました。このあたりをおさえてあれば、雰囲気でやってもどうにかなります（なりました）。
+部品がつまった箱が届きます(ほどんどが商品名に `DIY` と書いてあるので組み立て済みで届くことは稀)。
+
+僕の場合は説明書が箱の中に入っているわけではなく、販売者から組み立ての説明書のダウンロードリンクが送られてきました。  
+英語か中国語かの説明書だったはずですが、前述の記事と説明書の図でどうにか組み立てました。
+
+このあたりをおさえてあれば、雰囲気でやってもどうにかなります（なりました）。
 
 ### Grbl の書き込み
 
-実際、送られてきたものに書き込み済みかもしれないのでこの手順をすっ飛ばしても大丈夫です。何かがおかしい感じがしたらは自分で書き込みましょう。
+実際、送られてきたものは書き込み済みかもしれないので、この手順をすっ飛ばしても大丈夫です。何かがおかしい感じがしたら自分で書き込みましょう。
 
 Aliexpress で購入できるペンプロッタはだいたい、モーターがx軸、y軸にそれぞれ割り当たっているのではなく、2箇所に固定したモーターとギアベルトで動く [CoreXY](https://corexy.com) という構造(?)設計(?)になっているので、普通に書き込みをすると「x軸方向だけの移動のはずなのに変な方向に動き始める」とかが起きます。
 
@@ -50,12 +59,14 @@ Aliexpress で購入できるペンプロッタはだいたい、モーターが
 
 #### 動作確認
 
-インストールが終わったら、ペンプロッタをPCに接続して bCNC を起動してみましょう。ペンプロッタは起動したときの場所が原点`(0,0)`になるので、接続する前に原点っぽい位置にしておきましょう。
+インストールが終わったら、ペンプロッタをPCに接続して bCNC を起動してみましょう。  
+ペンプロッタは起動したときの場所が原点`(0,0)`になるので、接続する前に原点っぽい位置にしておきましょう。
+
 起動したら、上部の `File` を押して、左下にある `Serial` 内の `Port` から、ペンプロッタのArduinoっぽいものを選択して、`Open` を押しましょう。ペンプロッタからカチッと音がするかもしれません。
 
-![image](../assets/1_bcnc_connect.png)
+![image](../assets/2020-12-18-how-to-automate-handwriting-report/1_bcnc_connect.png)
 
-接続ができたら、上部の `Control` を押して、左下の `Control` 内の矢印でペンプロッタが動けばOKです。
+接続ができたら、上部の `Control` を押して、左下の `Control` 内の矢印でペンプロッタが動けばOKです。  
 動く方向が逆だったら、おそらく原点の位置を間違えているので、位置を直して接続からやり直しましょう。
 
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/2_bcnc_test.png)
@@ -66,16 +77,20 @@ Aliexpress で購入できるペンプロッタはだいたい、モーターが
 
 ### 元データの作成
 
-レポート用紙の大きさに合わせて Word なり、PowerPoint なりで作りましょう。当然その大きさで手書きデータを作成することになるので、文字の大きさだったり1行の設定だったりはきっちりやりましょう。さもなくば罫線とは…なレポートになってしまいます。
+レポート用紙の大きさに合わせて Word なり、PowerPoint なりで作りましょう。  
+当然その大きさで手書きデータを作成することになるので、文字の大きさだったり1行の設定だったりはきっちりやりましょう。  
+さもなくば罫線とは…なレポートになってしまいます。
 
-図は、画像ではなくPowerPointで書けば大方うまくいきます。ですが、同じ図を大量に書くとかでない限り、図は横着せずに手書きした方が速いと思います。
+図は、画像ではなくPowerPointで書けば大方うまくいきます。  
+(ですが、同じ図を大量に書くとかでない限り、図は横着せずに手書きした方が速いと思います。)
 
 ### 手書きフォントの作成
 
-[Calligraphr](https://www.calligraphr.com) に登録して、[Calligraphr - Upgrade](https://www.calligraphr.com/en/upgrade/)から有料版を購入します。
+[Calligraphr](https://www.calligraphr.com) に登録して、[Calligraphr - Upgrade](https://www.calligraphr.com/en/upgrade/)から有料版を購入します。  
 使っている文字の数75文字以下なら無料でできますが、レポートで無料版で済ませるのは絶望的なのでさっさと買ってしまいましょう。
 
 元データで使っている文字だけのフォントを作ります。
+
 `Template` → `Arbitary characters` を選ぶと、
 
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/3_calligraphr_arbitary_characters.png)
@@ -94,7 +109,8 @@ Add を押して閉じます。
 `Download Template` でPDFをダウンロードして、印刷やタブレットで書き込みましょう。
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/6_calligraphr_pdf.png)
 
-書き込み終わったら、`MYFONTS` の `Upload Template` で PDF をアップロードしましょう。最後に Build Font を押せばフォントファイルをダウンロードできるので、自分のパソコンにフォントを追加しましょう。
+書き込み終わったら、`MYFONTS` の `Upload Template` で PDF をアップロードしましょう。  
+最後に Build Font を押せばフォントファイルをダウンロードできるので、自分のパソコンにフォントを追加しましょう。
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/7_calligraphr_upload_pdf.png)
 
 ### 元データの手書きフォント化
@@ -104,11 +120,12 @@ Add を押して閉じます。
 ### ペンプロッタ用のデータへ変換
 
 ペンプロッタを動かすには、「Grblの書き込み」で登場した「G-Code」というものに変換する必要があります。
+
 ただ、Word や PowerPoint のデータから直接 G-Code への変換はできない(ソフトウェアがない)ので、
 
 > Word / PowerPoint → PDF → SVG → G-Code
 
-という順番に変換します。
+という順番で変換します。
 
 #### Word / PowerPoint → PDF
 
@@ -116,22 +133,24 @@ Word や PowerPoint で PDF として保存をするだけです。この記事�
 
 #### PDF → SVG
 
-`pdf to svg` とかでググって出てくる適当なやつでちゃちゃっとできます。ただ複数ページがまとまっているPDFとは違い、SVGは1ページ1ファイルです。
+`pdf to svg` とかでググって出てくる適当なやつでちゃちゃっとできます。ただ数ページ1ファイルのPDFとは違い、SVGは1ページ1ファイルです。
 
 #### SVG → G-Code
 
 最初にデザインツールのInkscapeと、その拡張機能のGcodetoolsを導入する必要があります。
-[Inkscape](https://inkscape.org/ja/)をパソコンにインストールします。
-インストール後、[Gcodetools](https://github.com/cnc-club/gcodetools)ページの `Code` → `Download ZIP` からダウンロードして、Inkscapeの拡張機能を入れるフォルダ `extensions` に追加します。
-(`extentions` の場所は環境によって異なるようなので調べてください)
+
+[Inkscape](https://inkscape.org/ja/)をパソコンにインストールします。  
+インストール後、[Gcodetools](https://github.com/cnc-club/gcodetools)ページの `Code` → `Download ZIP` からダウンロードして、Inkscapeの拡張機能を入れるフォルダ `extensions` に追加します。  
+(`extentions` の場所は環境によって異なるようなので調べてください)  
 これで導入は完了です。
 
-この先はSVGファイル1つひとつ行う必要があります。
+この先はSVGファイル1つひとつに対して行う必要があります。
 
 SVGファイルをInkscapeで開いて、`エクステンション` → `Gcodetools` → `Path to Gcode` を選びます。
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/8_inkscape_path_to_gcode.png)
 
-`Preferences` で保存先を書いたら、`Apply` を押して G-Code を作成します。長くても数分後にはファイルが出来上がります。
+`Preferences` で保存先を書いたら、`Apply` を押して G-Code を作成します。  
+長くても数分後にはファイルが出来上がります。
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/9_inkscape_gcodetools_filename.png)
 
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/10_made_gcode.png)
@@ -145,17 +164,21 @@ SVGファイルをInkscapeで開いて、`エクステンション` → `Gcodeto
 | ペンを上げるところ | `G00 Z5.000000` | `M03 S255` <br /> `G4 P0.05` |
 | ペンを下げるところ | `G01 Z-0.125000 F100.0(Penetrate)` | `G01 Z-0.125000 F100.0(Penetrate)` <br /> `M05 S0` <br /> `G4 P0.3` |
 
-ちなみに `F100.0` の値を大きくすると、ペンプロッタの動作が早くなります。編集例はこんな感じです。
+ちなみに `F100.0` の値を大きくすると、ペンプロッタの動作が早くなります。
+
+編集例はこんな感じです。
 
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/11_gcode_edit.png)
 
 ### ペンプロッタで手書きレポート作成！！！
 
-G-Code の編集が終わったら、インストールしたbCNCに戻って、(終了した場合はペンプロッタと接続し直して) 上部の `File` → `Open` からG-Codeファイルを開きます。
+G-Code の編集が終わったら、インストールしたbCNCに戻って、(終了した場合はペンプロッタと接続し直して)  
+上部の `File` → `Open` からG-Codeファイルを開きます。
 
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/12_bcnc_open_gcode.png)
 
-右部に動作の予定図が表示されるのを確認したら、紙を下において、`Control` → `Start` でペンが動き始めます。
+右部に動作の予定図が表示されるのを確認したら、紙を下において書く準備を整えましょう。  
+`Control` → `Start` でペンが動き始めます。
 
 ![image](../assets/2020-12-18-how-to-automate-handwriting-report/13_bcnc_start_plotting.png)
 
