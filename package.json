@@ -10,7 +10,7 @@
   "dependencies": {
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
-    "babel-plugin-styled-components": "2.0.3",
+    "babel-plugin-styled-components": "2.0.5",
     "gatsby": "3.14.6",
     "gatsby-image": "3.11.0",
     "gatsby-plugin-feed-mdx": "1.1.0",
