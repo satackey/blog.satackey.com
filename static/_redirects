@@ -1,3 +1,5 @@
+https://satackey.com/.well-known/nostr.json https://blog.satackey.com/.well-known/nostr.json 200
+
 https://satackey.com/* https://blog.satackey.com/:splat 302!
 https://www.satackey.com/* https://blog.satackey.com/:splat 302!
 https://satackeyblog.netlify.com/* https://blog.satackey.com/:splat 301!
